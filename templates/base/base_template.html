@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load staticfiles %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base_template.css' %}"/>
+
+
+</head>
+
+
+<body class="login-page new-topbar">
+<div class="topbar">
+    <div class="topbar-wrapper">
+        <div class="network-items"><a> <span class="hidden-text">Stack Exchange</span> </a></div>
+        <div class="topbar-links">
+            <div class="links-container"><span class="topbar-menu-links"> <a class="login-link">sign up</a> <a
+                    class="login-link">log in</a> <a href="/tour">tour</a> <a class="icon-help js-help-button" href="#">
+                help <span class="triangle"></span> </a> </span></div>
+            <div class="search-container">
+                <form autocomplete="off" method="get" action="/search" id="search">
+                    <input type="text" maxlength="240" autocomplete="off" tabindex="1" value="" placeholder="search"
+                           name="q">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="headeranon" id="header"><br class="cbt">
+
+        <div id="hlogo"><a href="/"> Cross Validated </a></div>
+        <div id="hmenus">
+            <div class="nav mainnavs mainnavsanon">
+                <ul>
+                    <li><a href="/questions" id="nav-questions">Smart Pomodoro</a></li>
+                    <li><a href="/tags" id="nav-tags">My Goal</a></li>
+                    <li><a href="/about" id="nav-tour">10 Years' Me</a></li>
+                    <li class="youarehere"><a href="/users" id="nav-users">Other</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div id="content">
+        <div data-login="true" class="login-page" id="mainbar-full">
+            <div class="subheader">
+                <div style="float: left;" id="tabs"><a class="youarehere">Activity Inventory</a> <a>To Do Today</a><a>Completed</a></div>
+            </div>
+
+            <div>
+
+                {% block content %}{% endblock %}
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div class="categories" id="footer">
+    <div class="footerwrap">
+        <div id="copyright"> Zhang Rick</div>
+        <div id="svnrev"> rev 2014.05.01</div>
+    </div>
+</div>
+</body>
+</html>

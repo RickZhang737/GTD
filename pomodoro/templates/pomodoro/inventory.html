@@ -1,0 +1,28 @@
+{% extends "base/base_template.html" %}
+
+<head>
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'pomodoro/css/inventory.css' %}" />
+
+</head>
+
+{% block content %}
+{% if activity_list %}
+    <div>
+    {% for activity in activity_list %}
+        <div>
+            <span class="priority">{{ activity.priority }}</span>
+            <span class="name">{{ activity.name }}</span>
+            <span class="estimated_pomos">{{ activity.estimated_pomos }}</span>
+            <span class="due_date">{{ activity.due_date }}</span>
+            <span class="add_to_today"></span>
+            <span class="drop_down_menu"></span>
+        </div>
+    {% endfor %}
+    </div>
+{% else %}
+    <p>No activity are available.</p>
+{% endif %}
+{% endblock %}
+
